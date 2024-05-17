@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: wheat;
+  }
+  
+  h1 {
+    color:brown;
+  }
+  
+  .task {
+    cursor: pointer;
+  }
+  
+  .task.completed {
+    text-decoration: line-through;
+  }
+  
+  button {
+    margin-left: 10px;
+  }
+  
