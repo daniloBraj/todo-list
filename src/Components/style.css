@@ -1,0 +1,33 @@
+@keyframes lineThrough {
+    from {
+      background-size: 0 100%;
+    }
+    to {
+      background-size: 100% 100%;
+    }
+  }
+  
+  .line-through-animation {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .line-through-animation::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s;
+    pointer-events: none;
+  }
+  
+  .line-through-complete::before {
+    transform: scaleX(1);
+  }
+  

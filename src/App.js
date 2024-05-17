@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Form from "./Components/Form";
-import Task from "./Components/Task";
-import "./main.css"
+import Task from "./Components/Task"; 
+import { AnimatePresence } from "framer-motion";
+import './main.css';
 
 const App = () => {
   const [taskInput, setTaskInput] = useState("");
@@ -32,20 +33,23 @@ const App = () => {
   return (
     <div>
       <h1>To-Do List</h1>
+      <h3>CROSS OUT TASKS BY CLICKING ON THEM</h3>
       <Form
         handleSubmit={handleSubmit}
         taskInput={taskInput}
         setTaskInput={setTaskInput}
       />
-      {tasks.map((task, index) => (
-        <Task
-          task={task}
-          key={index}
-          index={index}
-          onDelete={handleDelete}
-          onToggleComplete={handleToggleComplete}
-        />
-      ))}
+      <AnimatePresence>
+        {tasks.map((task, index) => (
+          <Task
+            task={task}
+            key={index}
+            index={index}
+            onDelete={handleDelete}
+            onToggleComplete={handleToggleComplete}
+          />
+        ))}
+      </AnimatePresence>
     </div>
   );
 };
