@@ -16,7 +16,7 @@ const App = () => {
 
   const handleToggleComplete = (index) => {
     const updatedTasks = tasks.map((task, idx) => {
-      if (idx === index) {
+      if (idx === index) { // Toggle the 'completed' status of the task and return the updated task
         return { ...task, completed: !task.completed };
       }
       return task;
